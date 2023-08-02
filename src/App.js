@@ -14,6 +14,7 @@ function App() {
   const [logIn, setlogIn] = useState(false);
 
   useRefreshToken(logIn);
+  window.history.pushState(null, "", window.location.origin);
 
   return (
     <div className="App">
