@@ -1,0 +1,60 @@
+.searchBar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 33.4375rem;
+    height: 6rem;
+    flex-shrink: 0;
+    border-radius: 1.875rem;
+    background: #D9D9D9;
+    overflow: hidden;
+    border: 1px solid transparent;
+    background: var(--background, #3A344B);
+    box-shadow: 0px 0px 5px 5px #59EBAD;
+}
+
+.inputField:focus {
+    outline: none;
+    /* Remove the default focus outline */
+}
+
+.inputField {
+    border: transparent;
+    background: #3A344B;
+    display: flex;
+    width: 24.625rem;
+    height: 4rem;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    color: #D9D9D9;
+    text-align: center;
+    font-family: Georgia;
+    font-size: 2.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.addButton {
+    /* Reset style for a button */
+
+    padding: 0;
+    margin: 0;
+    border: none;
+    background-color: transparent;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    /* Add any other reset properties you want */
+
+
+}
+
+.img {
+    display: inline;
+
+
+}

@@ -1,0 +1,16 @@
+.App {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background: linear-gradient(180deg, rgba(79, 66, 106, 0.99) 46.35%, rgba(70, 59, 96, 0.33) 96.12%);
+}
+
+.trackField {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 7.125rem;
+}

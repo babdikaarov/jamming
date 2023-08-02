@@ -1,0 +1,162 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 5rem;
+    max-width: 35rem;
+    margin-top: 0.7rem;
+    margin-bottom: 0.7rem;
+}
+
+.subContaioner:hover .order {
+    display: none;
+}
+
+.subContaioner:hover .play {
+    display: block;
+    cursor: pointer;
+}
+
+.orderPlay {
+    /* layout */
+    width: 3rem;
+    height: 3rem;
+}
+
+.orderPlay:hover .order {
+    display: none;
+}
+
+.orderPlay:hover .play {
+    display: block;
+    cursor: pointer;
+}
+
+.order {
+    /* remove none */
+    /* display: none; */
+    /* Type */
+    text-align: center;
+    font-family: Georgia;
+    font-size: 2.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    /* styles */
+    background: var(--main-text-color, conic-gradient(from 180deg at 50% 50.00%, #31A574 80.62499821186066deg, #64FFBE 343.125deg));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    cursor: default;
+}
+
+.play {
+    display: none;
+    /* padding: 4rem; */
+    padding: 0;
+    margin: 0;
+    border: none;
+    background-color: transparent;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+}
+
+/* .img {
+    display: inline;
+} */
+
+.imgDiv {
+    max-width: 7rem;
+    max-height: 5rem;
+    background: gray;
+}
+
+
+.trackDetails {
+    display: flex;
+    width: 16rem;
+    height: 5rem;
+    flex-direction: column;
+    justify-content: space-around;
+    cursor: default;
+}
+
+.trackDetails h3 {
+    /* display: inline-block; */
+    height: 2.5rem;
+
+    /* Typo */
+    font-family: Georgia;
+    font-size: 1.6rem;
+    font-style: bold;
+    font-weight: 400;
+    line-height: normal;
+
+    /* style */
+    background: var(--main-text-color, conic-gradient(from 180deg at 50% 50.00%, #31A574 80.62499821186066deg, #64FFBE 343.125deg));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.trackDetails h4 {
+    /* display: inline-block; */
+    height: 2.5rem;
+    /* Typo */
+    font-family: Georgia, sans-serif;
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    /* style */
+    background: var(--main-text-color, conic-gradient(from 180deg at 50% 50.00%, #31A574 80.62499821186066deg, #64FFBE 343.125deg));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.minutes {
+    display: block;
+    /* layout */
+    align-self: center;
+    /* Typo */
+    font-family: Georgia, sans-serif;
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    /* style */
+    background: var(--main-text-color, conic-gradient(from 180deg at 50% 50.00%, #31A574 80.62499821186066deg, #64FFBE 343.125deg));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    cursor: default;
+
+}
+
+.img {
+    display: inline;
+}
+
+.button {
+
+    display: block;
+    /* padding: 4rem; */
+    padding: 0;
+    margin: 0;
+    border: none;
+    background-color: transparent;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    /* Add any other reset properties you want */
+
+}

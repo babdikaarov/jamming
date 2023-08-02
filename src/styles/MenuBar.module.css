@@ -1,0 +1,12 @@
+.div {
+    display: flex;
+    position: absolute;
+    top: 0;
+    background: #3A344B;
+    height: 5rem;
+    width: 100%;
+    box-shadow: 0px 0px 5px 5px #59EBAD;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 2rem;
+}

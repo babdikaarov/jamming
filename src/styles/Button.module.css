@@ -1,0 +1,22 @@
+.addButton {
+    /* Reset style for a button */
+
+    padding: 0;
+    margin: 0;
+    border: none;
+    background-color: transparent;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    /* Add any other reset properties you want */
+
+
+}
+
+.img {
+    display: inline;
+
+
+}

@@ -1,0 +1,25 @@
+.div {
+    width: 15rem;
+    height: 4.5rem;
+    text-align: center;
+    border-radius: 3rem;
+    background: var(--background, #3A344B);
+    box-shadow: 0px 0px 5px 5px #59EBAD;
+}
+
+.button {
+    /* layout */
+    padding: 0;
+    margin: 0;
+    border: none;
+    display: inline;
+    /* Typo */
+    text-align: center;
+    font-family: Georgia;
+    font-size: 3.6rem;
+    /* Style */
+    background: var(--main-text-color, conic-gradient(from 180deg at 50% 50.00%, #31A574 80.62499821186066deg, #64FFBE 343.125deg));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
