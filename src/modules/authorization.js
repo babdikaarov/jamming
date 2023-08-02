@@ -1,7 +1,7 @@
 // Function to initiate the authorization process
 export const authorizeUser = async () => {
   const clientId = process.env.REACT_APP_API_KEY;
-  const redirectUri = "http://localhost:3000";
+  const redirectUri = "https://babdikaarov.netlify.app";
 
   const codeVerifier = generateRandomString(128);
   const codeChallenge = await generateCodeChallenge(codeVerifier);

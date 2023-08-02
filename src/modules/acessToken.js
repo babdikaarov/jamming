@@ -5,7 +5,7 @@ const tokenEndpoint = "https://accounts.spotify.com/api/token";
 export async function accessToken(code) {
   try {
     const codeVerifier = localStorage.getItem("code_verifier");
-    const redirectUri = "http://localhost:3000";
+    const redirectUri = "https://babdikaarov.netlify.app";
     if (!codeVerifier && !code) throw new Error("no codeVerifier or code");
     const bodyAccessToken = new URLSearchParams({
       grant_type: "authorization_code",
