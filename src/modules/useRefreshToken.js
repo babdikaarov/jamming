@@ -40,6 +40,7 @@ export default function useRefreshToken(logIn) {
     if (isExpired && logIn) {
       refreshAccessToken().catch((error) => console.error(error));
       //   console.log("refresh");
+      window.history.pushState(null, "", window.location.origin);
     }
 
     return () => {

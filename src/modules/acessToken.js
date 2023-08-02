@@ -30,6 +30,7 @@ export async function accessToken(code) {
       localStorage.setItem("expires_in", expires_in);
       localStorage.setItem("refresh_token", refresh_token);
       console.log("Token issued");
+      window.history.pushState(null, "", window.location.origin);
     }
   } catch (error) {
     if (error.error_description === "Authorization code expired") {
