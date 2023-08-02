@@ -1,70 +1,117 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Tasks
 
-## Available Scripts
+1. [X] Set Up Your Local Environment
+2. [X] Set Up Version Control  (used existed git repository)
+3. [X] Create Static Components
+4. [X] Implement Track Listing in The Component Tree
+5. [X] Implement Playlists in The Component Tree
+6. [X] Implement Adding Songs To a Custom Playlist
+7. [X] Implement Removing Songs From a Custom Playlist
+8. [X] Implement Playlist Renaming
+9. [X] Implement Saving the Playlist to a User's Account
+10. [X] Obtain a Spotify Access Token
+11. [X] Implement Spotify Search Request
+12. [X] Save a User's Playlist
+13. [ ] Testing and Debugging
+14. [ ] Review Your Project
 
-In the project directory, you can run:
+## Set Up Your Local Environment
 
-### `npm start`
+On your computer, create a React app named Jammming.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Set Up Version Control
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Set up the folder you created previously to be a Git repository (if you used create-react-app above, you may skip this step because create-react-app automatically configures the local Git repository).
 
-### `npm test`
+## Create Static Components
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Create components for your Jammming application. You may structure your components as you see fit, but you should have a component representing each of these core components of the interface:
 
-### `npm run build`
+- App
+- SearchBar
+- SearchResults
+- Playlist
+- Tracklist
+- Track
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Additionally, make sure that your interface has a Save To Spotify button and a Search button.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Implement Track Listing in The Component Tree
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+When a user requests data from Spotify, the JSON response will contain a set of song tracks. Your Jammming web app should display the song name, artist, and album for each track in the results list.
 
-### `npm run eject`
+Implement this by creating a unidirectional data flow from your root component. The root component should pass down the search results to a child component that will return each individual track to be rendered.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Since the Spotify API is not currently set up to be called, you may hard-code an array of track objects to be passed down for now.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Implement Playlists in The Component Tree
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Your Jammming web app should allow the user to customize their playlist title and tracks. When a user creates a playlist, your app should display the playlist name and tracks from the playlist.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Create a unidirectional data flow from your root component to relevant children components. This data flow should pass down the playlist name and tracks.
 
-## Learn More
+## Implement Adding Songs To a Custom Playlist
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Your Jammming web app should allow users to add songs from the search results to their custom playlist. To achieve this, implement a method that adds a selected song from the search results track list to the user’s custom playlist. The method should be triggered when the user clicks an “add” button displayed next to each track in the search results list.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Implement Removing Songs From a Custom Playlist
 
-### Code Splitting
+Along with adding, your Jammming web app should allow users to remove songs from their playlists.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+This function should trigger when the user presses the “remove” button next to a displayed track. To achieve this, implement a method that removes a selected song from the user’s custom playlist.
 
-### Analyzing the Bundle Size
+## Implement Playlist Renaming
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+One essential feature of a music application is customization. Provide users with more control over their music by allowing them to rename their playlists.
 
-### Making a Progressive Web App
+Implement code that enables a user to change the name of their playlist. The user should be able to click on the title of their playlist and type in a new name to replace the existing name.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Implement Saving the Playlist to a User's Account
 
-### Advanced Configuration
+Jammming’s main feature is allowing users to export their created playlist and save it to their personal Spotify account. Implement a feature to save a user’s playlist to their Spotify account and reset the existing playlist on the web app.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+As a part of this goal, you should access a track property named uri. Spotify uses this field to reference tracks in the Spotify library. You should create an array containing the uri of each track in the playlist.
 
-### Deployment
+At this point, you don’t need to interact with the Spotify API quite yet. Use mock data to test your implementation.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Obtain a Spotify Access Token
 
-### `npm run build` fails to minify
+To use the Spotify API with Jammming, you need to get a user’s Spotify access token to make Spotify API requests.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Create a JavaScript module that will handle the logic for getting an access token and using it to make requests. The method should have a way to get a user’s access token and store it.
+
+## Implement Spotify Search Request
+
+Connect the search bar to Spotify so that it can query data from the Spotify API. Your implementation should enable users to enter a search parameter and receive a response from the Spotify API. You should display the results from the request to the user.
+
+To make your request to the API, use the /v1/search?type=TRACKendpoint. You can refer to the [Spotify Web API Endpoint Reference](https://developer.spotify.com/documentation/web-api/reference/#/) for guidance on formatting your request.
+
+## Save a User's Playlist
+
+Create a method that writes the user’s custom playlist in Jammming to their Spotify account. The user should be able to save their custom playlist from Jammming into their account when they click the “Save To Spotify” button.
+
+To implement this feature, you will need to make requests to create new playlists on the user’s Spotify account with the playlist’s custom name and add the tracks from the user’s custom playlist to the new playlist.
+
+## Testing and Debugging
+
+Test often and test early. Testing frequently during the development process can help you identify issues and bugs sooner, making them easier and less time-consuming to fix. Wrap up your project by testing and debugging each component.
+
+Identify the components and functionalities of your project that need to be tested.
+Create test cases
+Execute the test cases
+Identify any issues or bugs that need to be fixed
+Implement your fix and perform a final test to ensure that all components and functionalities of your project are working as expected.
+
+## Review Your Project
+
+Congratulations! You’ve completed the Jammming project.
+
+You’ve come a long way. Let’s review what you’ve accomplished:
+
+You gained a strong understanding of React.js by creating a web application that interacts with the Spotify API.
+You gained an understanding of how to interact with an external API to make HTTP requests and make changes to a user’s account.
+You implemented user authentication that allows your web app users to log in and securely interact with the account.
+Over the course of this project, you utilized the React library, importing and exporting components, the Spotify API, props, and more to achieve a fully functioning music web application.
+
+You should be proud of how far you’ve come. Completing this project is a significant accomplishment for any learners looking to gain practical experience!
