@@ -4,7 +4,7 @@
     text-align: center;
     border-radius: 3rem;
     background: var(--background, #3A344B);
-    box-shadow: 0px 0px 5px 5px #59EBAD;
+    box-shadow: 0px 0px 3px 1px #59EBAD;
 }
 
 .button {

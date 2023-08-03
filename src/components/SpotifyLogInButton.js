@@ -5,6 +5,11 @@ import { accessToken } from "../modules/acessToken";
 // import { startInterval, stopInterval } from '../modules/'
 
 const SpotifyLogInButton = ({ setlogIn }) => {
+  const token = localStorage.getItem("access_token");
+  if (token) {
+    setlogIn(true);
+  }
+
   const urlParams = new URLSearchParams(window.location.search);
   const authorizationCode = urlParams.get("code");
 

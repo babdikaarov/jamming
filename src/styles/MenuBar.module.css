@@ -2,6 +2,7 @@
     display: flex;
     position: absolute;
     top: 0;
+    gap: 3rem;
     background: #3A344B;
     height: 5rem;
     width: 100%;
@@ -9,4 +10,18 @@
     justify-content: flex-end;
     align-items: center;
     padding-right: 2rem;
+}
+
+@media screen and (min-width: 720px) and (max-width: 1024px) {
+    .div {
+        height: 7rem;
+    }
+}
+
+@media screen and (min-width: 460px) and (max-width: 720px) {}
+
+@media screen and (min-width: 320px) and (max-width: 460px) {
+    .div {
+        height: 5rem;
+    }
 }
