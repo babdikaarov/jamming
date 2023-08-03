@@ -21,9 +21,11 @@ export default function Track({
   const handleAudio = () => {
     if (isPlaying && isSamePreview) {
       pausePlayAudio(); //current audio manipulation !pause
+      setControlIcon(playIcons.icon1);
     } else {
       stopAudio(); // new audio manipulation !play new audio
       playAudio(songToDisplay.preview);
+      setControlIcon(pauseIcons.icon1);
     }
   };
 
@@ -84,39 +86,41 @@ export default function Track({
 
   const myButton = (
     <>
-      <button
-        className={styles.play}
+      <div className={styles.play}>
+        <img className={styles.img} src={controlIcon} alt="icon" />
+      </div>
+    </>
+  );
+
+  return (
+    <div className={styles.container}>
+      <div
+        className={styles.subcontainer}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         onMouseDown={handleMouseDown}
         onMouseUp={handleMouseEnter}
         onClick={handleAudio}
       >
-        <img className={styles.img} src={controlIcon} alt="icon" />
-      </button>
-    </>
-  );
-
-  return (
-    <div className={styles.container}>
-      <div className={styles.orderPlay}>
-        <p className={styles.order}> {order + 1} </p>
-        {myButton}
+        <div className={styles.orderPlay}>
+          <p className={styles.order}> {order + 1} </p>
+          {myButton}
+        </div>
+        <div className={styles.imgDiv}>
+          <img
+            src={songToDisplay.img}
+            alt="track"
+            style={{
+              width: "5rem",
+              height: "5rem",
+            }}
+          />
+        </div>
+        <div className={styles.trackDetails}>
+          <h3> {songToDisplay.name} </h3> <h4> {songToDisplay.artist} </h4>
+        </div>
+        <p className={styles.minutes}> {songToDisplay.duration} </p>
       </div>
-      <div className={styles.imgDiv}>
-        <img
-          src={songToDisplay.img}
-          alt="track"
-          style={{
-            width: "5rem",
-            height: "5rem",
-          }}
-        />
-      </div>
-      <div className={styles.trackDetails}>
-        <h3> {songToDisplay.name} </h3> <h4> {songToDisplay.artist} </h4>
-      </div>
-      <p className={styles.minutes}> {songToDisplay.duration} </p>
       <button
         className={styles.button}
         onMouseEnter={() => setCurrentIcon(icons.icon2)}
@@ -130,22 +134,3 @@ export default function Track({
     </div>
   );
 }
-
-// const handleAudio = () => {
-
-//   if (isPlaying) {
-//     if(urlCompare === songToDisplay.preview){
-//       pausePlayAudio();//current audio manipulation !pause
-//     } else {
-//       stopAudio();  new audio manipulation !play new audio
-//       playAudio(songToDisplay.preview);
-//     }
-//   } else {
-//     if(urlCompare === songToDisplay.preview){
-//       pausePlayAudio(); current audio manipulation !play
-//     } else {
-//       stopAudio();  new audio manipulation !play new audio
-//       playAudio(songToDisplay.preview);
-//     }
-//   }
-// };
