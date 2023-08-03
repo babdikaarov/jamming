@@ -6,7 +6,7 @@ export async function searchSpotify(query) {
   const types = ["album", "artist", "playlist", "track"];
   // const types = ['album', 'artist', 'playlist', 'track', 'show', 'episode', 'audiobook'];
   const country = "KG";
-  const limit = 10;
+  const limit = 40;
   const offset = 0;
 
   const searchQuery = new URLSearchParams({

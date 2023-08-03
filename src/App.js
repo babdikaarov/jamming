@@ -4,9 +4,10 @@ import Tracklist from "./containers/Tracklist";
 import SearchBar from "./containers/SearchBar";
 import SearchResults from "./containers/SearchResults";
 import MenuBar from "./containers/MenuBar";
+import SpotifyLogInButton from "./components/SpotifyLogInButton";
 import useRefreshToken from "./modules/useRefreshToken";
 import { AudioPlayerProvider } from "./context/AudioContext";
-
+import Welcome from "./components/Welcome";
 function App() {
   const [fetchedList, setFetchedList] = useState([]); // fetched list of track from searchButton action
   const [customList, setCustomList] = useState([]); //create list of track
@@ -16,23 +17,32 @@ function App() {
 
   return (
     <div className="App">
-      <MenuBar setlogIn={setlogIn} />
-      <SearchBar setFetchedList={setFetchedList} />
-      <AudioPlayerProvider>
-        <div className="trackField">
-          <SearchResults
-            setCustomList={setCustomList}
-            fetchedList={fetchedList}
-            setFetchedList={setFetchedList}
-          />
-
-          <Tracklist
-            customList={customList}
-            setCustomList={setCustomList}
-            setFetchedList={setFetchedList}
-          />
+      {!logIn ? (
+        <div className="welcome">
+          <SpotifyLogInButton setlogIn={setlogIn} />
+          <Welcome />
         </div>
-      </AudioPlayerProvider>
+      ) : (
+        <>
+          <MenuBar setlogIn={setlogIn} />
+          <SearchBar setFetchedList={setFetchedList} />
+          <AudioPlayerProvider>
+            <div className="trackField">
+              <SearchResults
+                setCustomList={setCustomList}
+                fetchedList={fetchedList}
+                setFetchedList={setFetchedList}
+              />
+
+              <Tracklist
+                customList={customList}
+                setCustomList={setCustomList}
+                setFetchedList={setFetchedList}
+              />
+            </div>
+          </AudioPlayerProvider>
+        </>
+      )}
     </div>
   );
 }

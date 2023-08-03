@@ -56,14 +56,11 @@
 
 .img {
     display: inline;
-
+    width: 5rem;
 
 }
 
 @media screen and (min-width: 720px) and (max-width: 1024px) {
-    .img {
-        width: 5rem;
-    }
 
     .searchBar {
         margin-top: 10rem;
@@ -73,11 +70,5 @@
 @media screen and (min-width: 460px) and (max-width: 720px) {
     .searchBar {
         margin-top: 0;
-    }
-}
-
-@media screen and (min-width: 320px) and (max-width: 460px) {
-    .img {
-        width: 5rem;
     }
 }

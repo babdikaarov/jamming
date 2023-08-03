@@ -61,26 +61,10 @@
 }
 
 .img {
+  width: 5rem;
   display: inline;
 }
 
-@media screen and (min-width: 720px) and (max-width: 1024px) {
-  .img {
-    width: 5rem;
-  }
-}
-
-@media screen and (min-width: 460px) and (max-width: 720px) {
-  /* .img {
-    
-  } */
-}
-
-@media screen and (min-width: 320px) and (max-width: 460px) {
-  .img {
-    width: 5rem;
-  }
-}
 
 .Track {
   width: 35rem;

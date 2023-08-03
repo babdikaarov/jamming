@@ -1,0 +1,14 @@
+.custom-svg {
+    height: 3rem;
+
+    fill: #31A574;
+    /* Set the fill color to red */
+}
+
+.custom-svg:hover {
+    fill: #3182A5;
+}
+
+.custom-svg:active {
+    fill: #6D2ED4;
+}
