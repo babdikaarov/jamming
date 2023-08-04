@@ -52,6 +52,14 @@ export default function Welcome() {
       >
         <ReferenceIcon />
       </div>
+      <div>
+        <p>
+          Due to limitation of Sporify API, in order to use it please request to
+          include your email to API access through email link above. Only
+          approved web app can have access to Spotify API with no limit and this
+          complicated steps, which is only for personal use.{" "}
+        </p>
+      </div>
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import styles from "../styles/SearchResults.module.css";
 import Track from "./Track";
 import addIcons from "../assets/icons/add/add";

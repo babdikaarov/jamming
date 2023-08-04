@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import styles from "../styles/SearchBar.module.css";
 import icons from "../assets/icons/search/search";
 import { searchSpotify } from "../modules/spotifySearch";

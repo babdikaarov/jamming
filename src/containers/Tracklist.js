@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import styles from "../styles/Tracklist.module.css";
 import Track from "./Track";
 import removeIcon from "../assets/icons/remove/remove";
