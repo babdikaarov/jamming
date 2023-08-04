@@ -24,9 +24,9 @@ function App() {
         </div>
       ) : (
         <>
-          <MenuBar setlogIn={setlogIn} />
-          <SearchBar setFetchedList={setFetchedList} />
           <AudioPlayerProvider>
+            <MenuBar setlogIn={setlogIn} />
+            <SearchBar setFetchedList={setFetchedList} />
             <div className="trackField">
               <SearchResults
                 setCustomList={setCustomList}

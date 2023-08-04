@@ -1,17 +1,18 @@
-import React from 'react';
-import styles from '../styles/SpotifyLogOutButton.module.css';
-
-
+import React, { useContext } from "react";
+import styles from "../styles/SpotifyLogOutButton.module.css";
+import { AudioPlayerContext } from "../context/AudioContext";
 
 const SpotifyLogOutButton = ({ setlogIn }) => {
+  const { stopAudio } = useContext(AudioPlayerContext);
 
   const handleLogout = () => {
-    setlogIn(false)
+    stopAudio();
+    setlogIn(false);
     // Clear code_verifier and access_token from localStorage
-    localStorage.removeItem('code_verifier');
-    localStorage.removeItem('access_token');
-    localStorage.removeItem('expires_in');
-    deleteQueryParam('code')
+    localStorage.removeItem("code_verifier");
+    localStorage.removeItem("access_token");
+    localStorage.removeItem("expires_in");
+    deleteQueryParam("code");
     // Refresh the page to give feeling of log out to the user
     // window.location.reload();
   };
@@ -26,14 +27,15 @@ const SpotifyLogOutButton = ({ setlogIn }) => {
       urlParams.delete(paramName);
 
       // Replace the current URL without the deleted parameter
-      window.history.replaceState({}, '', '/');
+      window.history.replaceState({}, "", "/");
     }
   };
 
-
   return (
     <div className={styles.div}>
-      <button className={styles.button} onClick={handleLogout}>Logout</button>
+      <button className={styles.button} onClick={handleLogout}>
+        Logout
+      </button>
     </div>
   );
 };
