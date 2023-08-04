@@ -11,17 +11,17 @@ export default function SearchResults({
 }) {
   const [currentIcon, setCurrentIcon] = useState(icons.icon1);
 
-  const handleMouseEnter = () => {
+  const handleMouseEnter = useCallback(() => {
     setCurrentIcon(icons.icon2);
-  };
+  }, []);
 
-  const handleMouseLeave = () => {
+  const handleMouseLeave = useCallback(() => {
     setCurrentIcon(icons.icon1);
-  };
+  }, []);
 
-  const handleMouseDown = () => {
+  const handleMouseDown = useCallback(() => {
     setCurrentIcon(icons.icon3);
-  };
+  }, []);
 
   return (
     <section className={styles.section}>

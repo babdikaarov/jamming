@@ -142,7 +142,7 @@ a {
 
 html {
   height: 100%;
-  font-size: 1vh;
+  font-size: 10px;
   background: linear-gradient(180deg, rgba(79, 66, 106, 0.99) 46.35%, rgba(70, 59, 96, 0.33) 96.12%);
   background-size: cover;
   /* Stretch the background to cover the entire element */
@@ -151,4 +151,35 @@ html {
   background-attachment: fixed;
   /* K
   /* background-repeat: no-repeat; */
+}
+
+
+@media screen and (max-width: 460px) {
+  html {
+    font-size: 9px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  html {
+    font-size: 8px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  html {
+    font-size: 7px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  html {
+    font-size: 6px;
+  }
+}
+
+@media screen and (max-width: 260px) {
+  html {
+    font-size: 5px;
+  }
 }
