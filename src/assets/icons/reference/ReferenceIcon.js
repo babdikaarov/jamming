@@ -7,9 +7,7 @@ export default function ReferenceIcon({
   return (
     <>
       <div
-        onClick={() =>
-          redirectToURL("https://github.com/babdikaarov/jamming.git")
-        }
+        onClick={() => redirectToURL("https://github.com/babdikaarov/jamming")}
         className={styles.icons}
       >
         <svg
